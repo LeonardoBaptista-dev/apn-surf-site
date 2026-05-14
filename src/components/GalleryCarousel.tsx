@@ -154,7 +154,7 @@ export default function GalleryCarousel() {
             className="relative w-full max-w-6xl h-[80vh] flex flex-col items-center justify-center px-12"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-[calc(100%-80px)]">
               <Image 
                 src={items[selectedIndex].src} 
                 alt={items[selectedIndex].alt} 
@@ -163,9 +163,14 @@ export default function GalleryCarousel() {
                 priority
               />
             </div>
-            <div className="absolute -bottom-10 text-center">
-              <h4 className="text-white text-lg font-medium">{items[selectedIndex].alt}</h4>
-              <p className="text-white/50 text-sm">{selectedIndex + 1} de {items.length}</p>
+            
+            {/* Elegant Caption Area */}
+            <div className="mt-6 flex flex-col items-center justify-center pointer-events-none">
+              <div className="bg-neutral-900/80 backdrop-blur-md border border-neutral-700/50 px-8 py-3 rounded-full shadow-2xl flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
+                <h4 className="text-white text-xl font-semibold tracking-wide capitalize">{items[selectedIndex].alt}</h4>
+                <div className="hidden sm:block w-[1px] h-5 bg-neutral-600"></div>
+                <p className="text-neutral-400 text-sm uppercase tracking-widest font-medium">Foto {selectedIndex + 1} de {items.length}</p>
+              </div>
             </div>
           </div>
         </div>
