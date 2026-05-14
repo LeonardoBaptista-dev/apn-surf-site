@@ -12,13 +12,13 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section id="inicio" className="relative w-full h-[85vh] sm:h-[90vh] bg-neutral-900 flex items-center justify-center overflow-hidden">
+      <section id="inicio" className="relative w-full h-[100vh] bg-neutral-900 flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0 opacity-40">
           <Image 
             src="/apn-surf-site/img/aula.jpg" 
             alt="Surf APN" 
             fill 
-            className="object-cover object-top md:object-center"
+            className="object-cover object-[center_35%] md:object-center"
             priority
           />
         </div>
