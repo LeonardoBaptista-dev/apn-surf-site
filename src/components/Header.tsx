@@ -12,12 +12,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+          <a href="/apn-surf-site/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
             <div className="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden rounded-full border-2 border-neutral-900 group-hover:scale-105 transition-transform">
               <Image src="/apn-surf-site/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
             </div>
             <span className="font-bold text-xl md:text-2xl tracking-tighter uppercase group-hover:opacity-80 transition-opacity">APN Surf</span>
-          </Link>
+          </a>
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-8">

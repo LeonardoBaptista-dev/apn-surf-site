@@ -12,17 +12,17 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section id="inicio" className="relative w-full h-[90vh] bg-neutral-900 flex items-center justify-center overflow-hidden">
+      <section id="inicio" className="relative w-full h-[85vh] sm:h-[90vh] bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">
           <Image 
             src="/apn-surf-site/img/aula.jpg" 
             alt="Surf APN" 
             fill 
-            className="object-cover object-[center_30%] md:object-center"
+            className="object-cover object-top md:object-center"
             priority
           />
         </div>
-        <div className="relative z-10 text-center max-w-4xl px-4">
+        <div className="relative z-10 text-center max-w-4xl px-4 mt-[-5vh]">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 uppercase tracking-tight">
             A evolução começa na areia e <span className="text-neutral-300">continua na onda.</span>
           </h1>
