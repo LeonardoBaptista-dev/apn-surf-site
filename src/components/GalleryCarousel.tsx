@@ -5,13 +5,13 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
 const items = [
-  { src: "/img/aula_grupo_foto_horizontal.jpeg", alt: "Turma na praia" },
-  { src: "/img/foto_conceito_aminandes_menina_atras_2.jpeg", alt: "Foco e Mentoria" },
-  { src: "/img/aula_familia_foto_em_pe.jpeg", alt: "Surf em família" },
-  { src: "/img/aula_individual.jpeg", alt: "Aula individual" },
-  { src: "/img/foto_conceito_aminandes_menina_atras.jpeg", alt: "Atenção aos detalhes" },
-  { src: "/img/aminandes_tubo_em_pe.webp", alt: "Aminandes Tubo" },
-  { src: "/img/aula.jpg", alt: "Treino na areia" }
+  { src: "/apn-surf-site/img/aula_grupo_foto_horizontal.jpeg", alt: "Turma na praia" },
+  { src: "/apn-surf-site/img/foto_conceito_aminandes_menina_atras_2.jpeg", alt: "Foco e Mentoria" },
+  { src: "/apn-surf-site/img/aula_familia_foto_em_pe.jpeg", alt: "Surf em família" },
+  { src: "/apn-surf-site/img/aula_individual.jpeg", alt: "Aula individual" },
+  { src: "/apn-surf-site/img/foto_conceito_aminandes_menina_atras.jpeg", alt: "Atenção aos detalhes" },
+  { src: "/apn-surf-site/img/aminandes_tubo_em_pe.webp", alt: "Aminandes Tubo" },
+  { src: "/apn-surf-site/img/aula.jpg", alt: "Treino na areia" }
 ];
 
 export default function GalleryCarousel() {

@@ -13,7 +13,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-20">
             <Link href="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
               <div className="w-12 h-12 relative overflow-hidden rounded-full border-2 border-neutral-900 group-hover:scale-105 transition-transform">
-                <Image src="/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
+                <Image src="/apn-surf-site/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
               </div>
               <span className="font-bold text-2xl tracking-tighter uppercase group-hover:opacity-80 transition-opacity">APN Surf</span>
             </Link>
@@ -39,7 +39,7 @@ export default function Home() {
       <section id="inicio" className="relative w-full h-[90vh] bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">
           <Image 
-            src="/img/aula.jpg" 
+            src="/apn-surf-site/img/aula.jpg" 
             alt="Surf APN" 
             fill 
             className="object-cover"
@@ -88,7 +88,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl group border border-neutral-100">
-              <Image src="/img/barraca_da_escola.jpeg" alt="Estrutura APN na areia" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/apn-surf-site/img/barraca_da_escola.jpeg" alt="Estrutura APN na areia" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function Home() {
             </div>
             <div className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center relative overflow-hidden">
               <div className="absolute inset-0 z-0 opacity-20">
-                <Image src="/img/surfcamp_garopaba.jpg" alt="Surf Camp" fill className="object-cover" />
+                <Image src="/apn-surf-site/img/surfcamp_garopaba.jpg" alt="Surf Camp" fill className="object-cover" />
               </div>
               <div className="relative z-10">
                 <Calendar className="w-12 h-12 mb-6 text-neutral-300 mx-auto" />
@@ -142,7 +142,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-[3rem] overflow-hidden shadow-xl flex flex-col md:flex-row">
             <div className="md:w-1/2 relative min-h-[400px]">
-              <Image src="/img/Aminandes-Pamplona-tubo.jpg" alt="Aminandes Pamplona Neto no Tubo" fill className="object-cover" />
+              <Image src="/apn-surf-site/img/Aminandes-Pamplona-tubo.jpg" alt="Aminandes Pamplona Neto no Tubo" fill className="object-cover" />
             </div>
             <div className="md:w-1/2 p-12 lg:p-16 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 bg-neutral-100 rounded-full px-4 py-2 w-max mb-6">
@@ -187,7 +187,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Link href="/" className="inline-block">
             <div className="w-16 h-16 relative overflow-hidden rounded-full mx-auto mb-6 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer">
-              <Image src="/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
+              <Image src="/apn-surf-site/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
             </div>
           </Link>
           <p className="mb-4">© 2026 APN Aulas de Surf. Pico de Matinhos, PR.</p>
