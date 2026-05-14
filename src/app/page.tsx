@@ -22,7 +22,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative z-10 text-center max-w-4xl px-4 mt-[-5vh]">
+        <div className="relative z-10 text-center max-w-4xl px-4 mt-8 sm:mt-0">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 uppercase tracking-tight">
             A evolução começa na areia e <span className="text-neutral-300">continua na onda.</span>
           </h1>
