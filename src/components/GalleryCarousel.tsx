@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const items = [
   { src: "/apn-surf-site/img/aula_grupo_foto_horizontal.jpeg", alt: "Turma na praia" },
@@ -23,7 +22,7 @@ export default function GalleryCarousel() {
   const scroll = (direction: "left" | "right") => {
     if (carouselRef.current) {
       const { scrollLeft, clientWidth } = carouselRef.current;
-      const scrollTo = direction === "left" ? scrollLeft - clientWidth * 0.8 : scrollLeft + clientWidth * 0.8;
+      const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth;
       
       carouselRef.current.scrollTo({
         left: scrollTo,
@@ -72,128 +71,105 @@ export default function GalleryCarousel() {
 
   return (
     <>
-      <div className="relative w-full max-w-[100vw] mt-10 overflow-hidden">
-        {/* Modern Navigation Arrows */}
-        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-8 z-20">
+      <div className="relative w-full max-w-7xl mx-auto mt-10">
+        {/* Navigation Arrows */}
+        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 z-20">
           <button 
             onClick={() => scroll("left")} 
-            className="group bg-neutral-900/80 hover:bg-white text-white hover:text-neutral-900 w-14 h-14 flex items-center justify-center rounded-full shadow-[0_0_20px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 border border-white/10"
+            className="bg-neutral-900 hover:bg-neutral-800 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all"
           >
-            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
         </div>
         
-        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-8 z-20">
+        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20">
           <button 
             onClick={() => scroll("right")} 
-            className="group bg-neutral-900/80 hover:bg-white text-white hover:text-neutral-900 w-14 h-14 flex items-center justify-center rounded-full shadow-[0_0_20px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 border border-white/10"
+            className="bg-neutral-900 hover:bg-neutral-800 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all"
           >
-            <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight className="w-6 h-6" />
           </button>
         </div>
 
-        {/* Cinematic Carousel Container */}
+        {/* Simple & Clean Carousel Container */}
         <div 
           ref={carouselRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-12 px-[10vw] sm:px-[calc(50vw-190px)] lg:px-[calc(50vw-225px)] hide-scrollbars items-center w-full"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 hide-scrollbars w-full"
         >
           {items.map((item, i) => (
-            <motion.div 
+            <div 
               key={i} 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
               onClick={() => openModal(i)}
-              className="relative w-[80vw] sm:w-[380px] lg:w-[450px] aspect-[4/5] sm:h-[40rem] shrink-0 snap-center rounded-[2rem] overflow-hidden group shadow-2xl cursor-pointer bg-neutral-800"
+              // Mobile: 100% width (1 item). Desktop: 33.333% width minus gap (3 items).
+              className="relative flex-none w-[100%] md:w-[calc(33.333%-0.75rem)] h-[50vh] sm:h-[60vh] shrink-0 snap-center rounded-xl overflow-hidden group shadow-md cursor-pointer bg-neutral-950"
             >
+              {/* object-contain ensures the image is NEVER cropped */}
               <Image 
                 src={item.src} 
                 alt={item.alt} 
                 fill 
-                className="object-cover group-hover:scale-110 transition-transform duration-[1.2s] ease-out" 
+                className="object-contain" 
               />
-              {/* Premium Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                  <h3 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-2 leading-tight drop-shadow-lg">
-                    {item.alt}
-                  </h3>
-                  <div className="flex items-center gap-2 text-white/80 font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    <Maximize2 className="w-4 h-4" />
-                    <span>Visualizar</span>
-                  </div>
-                </div>
+              
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                <Maximize2 className="w-8 h-8 text-white mb-2" />
+                <h3 className="text-white font-bold text-center px-4">
+                  {item.alt}
+                </h3>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Modern Cinematic Lightbox */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-xl"
+      {/* Lightbox Modal */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm"
+          onClick={closeModal}
+        >
+          <button 
             onClick={closeModal}
+            className="absolute top-6 right-6 z-50 text-white/50 hover:text-white p-3 rounded-full"
           >
-            <button 
-              onClick={closeModal}
-              className="absolute top-6 right-6 sm:top-10 sm:right-10 z-50 text-white/50 hover:text-white transition-colors bg-white/5 hover:bg-white/20 p-3 rounded-full backdrop-blur-md"
-            >
-              <X className="w-8 h-8" />
-            </button>
+            <X className="w-8 h-8" />
+          </button>
 
-            <button 
-              onClick={prevImage}
-              className="absolute left-2 sm:left-12 z-50 text-white/50 hover:text-white bg-transparent hover:bg-white/10 p-4 sm:p-5 rounded-full transition-all"
-            >
-              <ChevronLeft className="w-10 h-10 sm:w-14 sm:h-14" />
-            </button>
+          <button 
+            onClick={prevImage}
+            className="absolute left-2 md:left-8 z-50 text-white/50 hover:text-white p-4"
+          >
+            <ChevronLeft className="w-10 h-10" />
+          </button>
 
-            <button 
-              onClick={nextImage}
-              className="absolute right-2 sm:right-12 z-50 text-white/50 hover:text-white bg-transparent hover:bg-white/10 p-4 sm:p-5 rounded-full transition-all"
-            >
-              <ChevronRight className="w-10 h-10 sm:w-14 sm:h-14" />
-            </button>
+          <button 
+            onClick={nextImage}
+            className="absolute right-2 md:right-8 z-50 text-white/50 hover:text-white p-4"
+          >
+            <ChevronRight className="w-10 h-10" />
+          </button>
 
-            <motion.div 
-              key={selectedIndex}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative w-full max-w-7xl h-[75vh] sm:h-[85vh] mx-4 sm:mx-32 outline-none flex flex-col items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="relative w-full h-full rounded-lg overflow-hidden shrink-0">
-                <Image 
-                  src={items[selectedIndex].src} 
-                  alt={items[selectedIndex].alt} 
-                  fill 
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <div className="absolute -bottom-16 sm:-bottom-12 left-0 right-0 text-center">
-                <h4 className="text-white text-xl sm:text-2xl font-bold tracking-wide">
-                  {items[selectedIndex].alt}
-                </h4>
-                <p className="text-white/40 text-sm mt-1 uppercase tracking-widest font-semibold flex items-center justify-center gap-3">
-                  <span className="w-8 h-[1px] bg-white/20" />
-                  {selectedIndex + 1} DE {items.length}
-                  <span className="w-8 h-[1px] bg-white/20" />
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <div 
+            className="relative w-full max-w-6xl h-[80vh] flex flex-col items-center justify-center px-12"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full h-full">
+              <Image 
+                src={items[selectedIndex].src} 
+                alt={items[selectedIndex].alt} 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="absolute -bottom-10 text-center">
+              <h4 className="text-white text-lg font-medium">{items[selectedIndex].alt}</h4>
+              <p className="text-white/50 text-sm">{selectedIndex + 1} de {items.length}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
