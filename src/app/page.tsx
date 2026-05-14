@@ -12,7 +12,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section id="inicio" className="relative w-full h-[100vh] bg-neutral-900 flex items-center justify-center overflow-hidden pt-20">
+      <section id="inicio" className="relative w-full min-h-[100vh] bg-neutral-900 flex flex-col items-center justify-center overflow-hidden pt-28 pb-12">
         <div className="absolute inset-0 z-0 opacity-40">
           <Image 
             src="/apn-surf-site/img/aula.jpg" 
@@ -22,18 +22,18 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative z-10 text-center max-w-4xl px-4 mt-8 sm:mt-0">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 uppercase tracking-tight">
+        <div className="relative z-10 text-center max-w-4xl px-4 flex flex-col items-center mt-auto mb-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 uppercase tracking-tight leading-tight">
             A evolução começa na areia e <span className="text-neutral-300">continua na onda.</span>
           </h1>
-          <p className="text-lg md:text-2xl text-neutral-200 mb-10 font-light max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-2xl text-neutral-200 mb-10 font-light max-w-2xl mx-auto">
             A APN não forma apenas alunos — forma surfistas preparados, conscientes e capazes de evoluir de forma sólida no surf.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
             <a href="#a-escola" className="bg-white text-neutral-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2">
               Quero evoluir <ArrowRight className="w-5 h-5" />
             </a>
-            <a href="#o-professor" className="bg-transparent border border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors">
+            <a href="#o-professor" className="bg-transparent border border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center">
               Conhecer o Método
             </a>
           </div>
