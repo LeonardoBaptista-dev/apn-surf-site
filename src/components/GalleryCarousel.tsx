@@ -95,7 +95,7 @@ export default function GalleryCarousel() {
         {/* Cinematic Carousel Container */}
         <div 
           ref={carouselRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-12 px-4 sm:px-12 hide-scrollbars items-center"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-12 px-[10vw] sm:px-[calc(50%-190px)] lg:px-[calc(50%-225px)] hide-scrollbars items-center"
         >
           {items.map((item, i) => (
             <motion.div 
@@ -105,7 +105,7 @@ export default function GalleryCarousel() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               onClick={() => openModal(i)}
-              className="relative w-[75vw] sm:w-[380px] lg:w-[450px] aspect-[4/5] sm:h-[40rem] shrink-0 snap-center rounded-[2rem] overflow-hidden group shadow-2xl cursor-pointer bg-neutral-800"
+              className="relative w-[80vw] sm:w-[380px] lg:w-[450px] aspect-[4/5] sm:h-[40rem] shrink-0 snap-center rounded-[2rem] overflow-hidden group shadow-2xl cursor-pointer bg-neutral-800"
             >
               <Image 
                 src={item.src} 
