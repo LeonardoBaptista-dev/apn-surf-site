@@ -2,38 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Waves, Calendar, User, ArrowRight, CheckCircle2, Instagram } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-neutral-50 flex flex-col font-sans text-neutral-900">
       
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
-              <div className="w-12 h-12 relative overflow-hidden rounded-full border-2 border-neutral-900 group-hover:scale-105 transition-transform">
-                <Image src="/apn-surf-site/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
-              </div>
-              <span className="font-bold text-2xl tracking-tighter uppercase group-hover:opacity-80 transition-opacity">APN Surf</span>
-            </Link>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#inicio" className="text-neutral-600 hover:text-black font-medium transition-colors">Início</a>
-              <a href="#a-escola" className="text-neutral-600 hover:text-black font-medium transition-colors">A Escola</a>
-              <a href="#o-pico" className="text-neutral-600 hover:text-black font-medium transition-colors">O Pico</a>
-              <a href="#o-professor" className="text-neutral-600 hover:text-black font-medium transition-colors">O Professor</a>
-            </nav>
-            <a 
-              href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20aulas%20de%20surf!" 
-              target="_blank" 
-              rel="noreferrer"
-              className="flex bg-neutral-900 text-white px-5 py-2.5 rounded-full font-medium hover:bg-neutral-800 transition-colors cursor-pointer text-sm"
-            >
-              Agendar Aula
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section id="inicio" className="relative w-full h-[90vh] bg-neutral-900 flex items-center justify-center overflow-hidden">
@@ -42,7 +18,7 @@ export default function Home() {
             src="/apn-surf-site/img/aula.jpg" 
             alt="Surf APN" 
             fill 
-            className="object-cover"
+            className="object-cover object-[center_30%] md:object-center"
             priority
           />
         </div>

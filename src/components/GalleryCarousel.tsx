@@ -72,9 +72,9 @@ export default function GalleryCarousel() {
 
   return (
     <>
-      <div className="relative w-full max-w-7xl mx-auto mt-10">
+      <div className="relative w-full max-w-[100vw] mt-10 overflow-hidden">
         {/* Modern Navigation Arrows */}
-        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 z-20">
+        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-8 z-20">
           <button 
             onClick={() => scroll("left")} 
             className="group bg-neutral-900/80 hover:bg-white text-white hover:text-neutral-900 w-14 h-14 flex items-center justify-center rounded-full shadow-[0_0_20px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 border border-white/10"
@@ -83,7 +83,7 @@ export default function GalleryCarousel() {
           </button>
         </div>
         
-        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20">
+        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-8 z-20">
           <button 
             onClick={() => scroll("right")} 
             className="group bg-neutral-900/80 hover:bg-white text-white hover:text-neutral-900 w-14 h-14 flex items-center justify-center rounded-full shadow-[0_0_20px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 border border-white/10"
@@ -95,7 +95,7 @@ export default function GalleryCarousel() {
         {/* Cinematic Carousel Container */}
         <div 
           ref={carouselRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-12 px-[10vw] sm:px-[calc(50%-190px)] lg:px-[calc(50%-225px)] hide-scrollbars items-center"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-12 px-[10vw] sm:px-[calc(50vw-190px)] lg:px-[calc(50vw-225px)] hide-scrollbars items-center w-full"
         >
           {items.map((item, i) => (
             <motion.div 
