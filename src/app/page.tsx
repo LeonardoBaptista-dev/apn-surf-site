@@ -174,17 +174,17 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Promo arts are native 4:5 with text baked in. Height is viewport-driven on
-              desktop; width follows from the ratio. */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 mb-6">
-            <div className="relative aspect-[4/5] w-full max-w-sm sm:w-auto sm:h-[36vh] lg:h-[40vh] sm:max-h-[420px] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_hurley.jpg" alt="5º APN Surf Camp, últimas vagas, apresentado pela Hurley" fill sizes="(max-width: 640px) 90vw, 30vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+          {/* Promo arts are native 4:5 with text baked in. Width-driven grid fills the
+              whole row; the essential info above stays visible without scrolling. */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 w-full mb-6">
+            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_hurley.jpg" alt="5º APN Surf Camp, últimas vagas, apresentado pela Hurley" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <div className="relative aspect-[4/5] w-full max-w-sm sm:w-auto sm:h-[36vh] lg:h-[40vh] sm:max-h-[420px] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_turma.jpg" alt="Turma do APN Surf Camp reunida na areia" fill sizes="(max-width: 640px) 90vw, 30vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_turma.jpg" alt="Turma do APN Surf Camp reunida na areia" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <div className="relative aspect-[4/5] w-full max-w-sm sm:w-auto sm:h-[36vh] lg:h-[40vh] sm:max-h-[420px] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_deck.jpg" alt="Deck do Grajagan Surf Resort, um final de semana pra guardar na memória" fill sizes="(max-width: 640px) 90vw, 30vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_deck.jpg" alt="Deck do Grajagan Surf Resort, um final de semana pra guardar na memória" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
 
