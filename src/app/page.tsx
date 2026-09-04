@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Waves, Calendar, User, ArrowRight, CheckCircle2 } from "lucide-react";
+import GalleryCarousel from "@/components/GalleryCarousel";
+import Header from "@/components/Header";
 
 // lucide-react removed brand icons, so the Instagram glyph lives here as plain SVG
 function InstagramIcon({ className }: { className?: string }) {
@@ -12,8 +14,6 @@ function InstagramIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-import GalleryCarousel from "@/components/GalleryCarousel";
-import Header from "@/components/Header";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section id="inicio" className="relative w-full min-h-[100vh] bg-neutral-900 flex flex-col items-center justify-center overflow-hidden pt-28 pb-12">
+      <section id="inicio" className="relative w-full min-h-[100svh] bg-neutral-900 flex flex-col items-center justify-center overflow-hidden pt-28 pb-12">
         <div className="absolute inset-0 z-0 opacity-40">
           <Image 
             src="/apn-surf-site/img/aula.jpg" 
@@ -52,15 +52,15 @@ export default function Home() {
       </section>
 
       {/* About The School */}
-      <section id="a-escola" className="py-24 bg-white">
+      <section id="a-escola" className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div className="space-y-8">
               <div>
                 <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-400 block mb-3">A Escola</span>
-                <h2 className="text-4xl font-bold uppercase tracking-tight">Escola de Surf Referência</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight">Escola de Surf Referência</h2>
               </div>
-              <p className="text-lg text-neutral-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
                 A APN Aulas de Surf é especializada na formação de surfistas com metodologia profissional, segurança e evolução consistente. Entregamos muito mais do que aulas: oferecemos um processo estruturado de evolução que desenvolve desde iniciantes até surfistas avançados, focando em técnica, leitura de mar e posicionamento.
               </p>
               <ul className="space-y-4">
@@ -77,7 +77,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl group border border-neutral-100">
+            <div className="relative h-[380px] sm:h-[460px] md:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl group border border-neutral-100">
               <Image src="/apn-surf-site/img/barraca_da_escola.jpeg" alt="Estrutura APN na areia" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
@@ -85,14 +85,14 @@ export default function Home() {
       </section>
 
       {/* The Spot (O Pico) */}
-      <section id="o-pico" className="py-24 bg-neutral-900 text-white">
+      <section id="o-pico" className="py-16 sm:py-24 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500 block mb-3">O Pico</span>
-            <h2 className="text-4xl font-bold uppercase tracking-tight mb-4">Pico de Matinhos</h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">Onde a mágica acontece. Um dos melhores lugares do Brasil para aprender e evoluir.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight mb-4">Pico de Matinhos</h2>
+            <p className="text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto">Onde a mágica acontece. Um dos melhores lugares do Brasil para aprender e evoluir.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
             <div className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center">
               <Waves className="w-12 h-12 mb-6 text-neutral-300" />
               <h3 className="text-2xl font-bold mb-3">Direita Perfeita</h3>
@@ -103,7 +103,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-3">Ideal na Maré Seca</h3>
               <p className="text-neutral-400">A onda quebra devagar e é perfeita na última seção para os iniciantes entrarem com segurança.</p>
             </div>
-            <a href="#surf-camp" className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group cursor-pointer">
+            <a href="#surf-camp" className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group cursor-pointer sm:col-span-2 lg:col-span-1">
               <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-30 transition-opacity">
                 <Image src="/apn-surf-site/img/surfcamp_garopaba.jpg" alt="Surf Camp" fill className="object-cover" />
               </div>
@@ -119,42 +119,43 @@ export default function Home() {
       </section>
 
       {/* Surf Camp */}
-      <section id="surf-camp" className="py-24 bg-white overflow-hidden">
+      <section id="surf-camp" className="py-16 sm:py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 bg-neutral-900 text-white rounded-full px-5 py-2 text-sm font-bold uppercase tracking-widest mb-6">
+          <div className="text-center mb-10 sm:mb-16">
+            <span className="inline-flex items-center gap-2 bg-neutral-900 text-white rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold uppercase tracking-widest mb-6">
               <Calendar className="w-4 h-4" /> 5ª Edição · Últimas vagas
             </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight mb-4">APN Surf Camp</h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight mb-4">APN Surf Camp</h2>
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
               Três dias de imersão total no surf: hospedagem, aulas dentro e fora d&apos;água, conexão e muita energia boa. A 5ª edição acontece no Grajagan Surf Resort, de frente para a Praia Grande, na Ilha do Mel (PR).
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_grajagan.jpg" alt="Grajagan Surf Resort, Ilha do Mel — sede do 5º APN Surf Camp" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+          {/* The promo arts are native 4:5 with text baked in — 4:5 frames show them uncropped at every width */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 max-w-md sm:max-w-none lg:max-w-5xl mx-auto mb-10 sm:mb-16">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_hurley.jpg" alt="5º APN Surf Camp — últimas vagas, apresentado pela Hurley" fill sizes="(max-width: 640px) 90vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_turma.jpg" alt="Turma do APN Surf Camp reunida na areia" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_turma.jpg" alt="Turma do APN Surf Camp reunida na areia" fill sizes="(max-width: 640px) 90vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_deck.jpg" alt="Deck do Grajagan Surf Resort — um final de semana pra guardar na memória" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_deck.jpg" alt="Deck do Grajagan Surf Resort — um final de semana pra guardar na memória" fill sizes="(max-width: 640px) 90vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-neutral-50 border border-neutral-200 p-8 rounded-2xl text-center">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 mb-10 sm:mb-16">
+            <div className="bg-neutral-50 border border-neutral-200 p-6 sm:p-8 rounded-2xl text-center">
               <Calendar className="w-10 h-10 mx-auto mb-4 text-neutral-900" />
               <h3 className="text-xl font-bold mb-2">25, 26 e 27 de Setembro</h3>
               <p className="text-neutral-600">Um final de semana inteiro dedicado à sua evolução no surf.</p>
             </div>
-            <div className="bg-neutral-50 border border-neutral-200 p-8 rounded-2xl text-center">
+            <div className="bg-neutral-50 border border-neutral-200 p-6 sm:p-8 rounded-2xl text-center">
               <MapPin className="w-10 h-10 mx-auto mb-4 text-neutral-900" />
               <h3 className="text-xl font-bold mb-2">Grajagan Surf Resort</h3>
               <p className="text-neutral-600">Ilha do Mel, Praia Grande — natureza preservada e uma das melhores ondas do Paraná.</p>
             </div>
-            <div className="bg-neutral-50 border border-neutral-200 p-8 rounded-2xl text-center">
+            <div className="bg-neutral-50 border border-neutral-200 p-6 sm:p-8 rounded-2xl text-center sm:col-span-2 lg:col-span-1">
               <Waves className="w-10 h-10 mx-auto mb-4 text-neutral-900" />
               <h3 className="text-xl font-bold mb-2">Imersão Completa</h3>
               <p className="text-neutral-600">Aulas para todos os níveis, treino fora d&apos;água, vídeo-análise e certificado.</p>
@@ -162,12 +163,12 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <p className="text-sm uppercase tracking-widest text-neutral-500 font-semibold mb-6">Com apoio de Hurley · Back Wash · Grajagan Surf Resort · The Basement</p>
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-neutral-500 font-semibold mb-6 px-2">Com apoio de Hurley · Back Wash · Grajagan Surf Resort · The Basement</p>
             <a
               href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20no%205%C2%BA%20APN%20Surf%20Camp%20na%20Ilha%20do%20Mel!"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-neutral-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-neutral-800 transition-colors"
+              className="inline-flex items-center justify-center gap-3 bg-neutral-900 text-white w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-neutral-800 transition-colors"
             >
               Garantir minha vaga <ArrowRight className="w-5 h-5" />
             </a>
@@ -176,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* Image Gallery / Carousel */}
-      <section id="galeria" className="py-24 bg-neutral-900 border-t border-neutral-800 overflow-hidden relative">
+      <section id="galeria" className="py-16 sm:py-24 bg-neutral-900 border-t border-neutral-800 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500 block mb-3">Direto do nosso Instagram</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">Galeria & Lifestyle</h2>
@@ -199,19 +200,19 @@ export default function Home() {
       </section>
 
       {/* The Professor */}
-      <section id="o-professor" className="py-24 bg-neutral-100">
+      <section id="o-professor" className="py-16 sm:py-24 bg-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-[3rem] overflow-hidden shadow-xl flex flex-col md:flex-row">
-            <div className="md:w-1/2 relative min-h-[400px]">
+          <div className="bg-white rounded-3xl sm:rounded-[3rem] overflow-hidden shadow-xl flex flex-col md:flex-row">
+            <div className="md:w-1/2 relative min-h-[280px] sm:min-h-[400px]">
               <Image src="/apn-surf-site/img/Aminandes-Pamplona-tubo.jpg" alt="Aminandes Pamplona Neto no Tubo" fill className="object-cover" />
             </div>
-            <div className="md:w-1/2 p-12 lg:p-16 flex flex-col justify-center">
+            <div className="md:w-1/2 p-7 sm:p-12 lg:p-16 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 bg-neutral-100 rounded-full px-4 py-2 w-max mb-6">
                 <User className="w-4 h-4 text-neutral-600" />
                 <span className="text-sm font-semibold tracking-wide uppercase text-neutral-600">Fundador & CEO</span>
               </div>
-              <h2 className="text-4xl font-bold mb-2">Aminandes Pamplona Neto</h2>
-              <a href="https://www.instagram.com/aminandespamplona/" target="_blank" rel="noreferrer" className="text-xl text-neutral-500 hover:text-neutral-900 transition-colors mb-8 font-light block">@aminandespamplona</a>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-2">Aminandes Pamplona Neto</h2>
+              <a href="https://www.instagram.com/aminandespamplona/" target="_blank" rel="noreferrer" className="text-lg sm:text-xl text-neutral-500 hover:text-neutral-900 transition-colors mb-8 font-light block">@aminandespamplona</a>
               
               <ul className="space-y-6 mb-8">
                 <li className="flex gap-4">
@@ -230,7 +231,7 @@ export default function Home() {
                 </li>
               </ul>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a href="https://www.instagram.com/apnaulasdesurf_picodematinhos/" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 text-neutral-900 border-2 border-neutral-900 px-6 py-3 rounded-full font-bold hover:bg-neutral-900 hover:text-white transition-colors">
                   <InstagramIcon className="w-5 h-5" /> Instagram da Escola
                 </a>
@@ -246,7 +247,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-neutral-900 text-neutral-400 pt-16 pb-10 border-t border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 mb-12">
             <div>
               <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
                 <div className="w-12 h-12 relative overflow-hidden rounded-full border-2 border-neutral-700 group-hover:border-white transition-colors">
