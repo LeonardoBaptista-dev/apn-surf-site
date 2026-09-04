@@ -1,6 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Waves, Calendar, User, ArrowRight, CheckCircle2, Instagram } from "lucide-react";
+import { MapPin, Waves, Calendar, User, ArrowRight, CheckCircle2 } from "lucide-react";
+
+// lucide-react removed brand icons, so the Instagram glyph lives here as plain SVG
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
 import GalleryCarousel from "@/components/GalleryCarousel";
 import Header from "@/components/Header";
 
@@ -45,7 +56,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-4xl font-bold uppercase tracking-tight">Escola de Surf Referência</h2>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-400 block mb-3">A Escola</span>
+                <h2 className="text-4xl font-bold uppercase tracking-tight">Escola de Surf Referência</h2>
+              </div>
               <p className="text-lg text-neutral-600 leading-relaxed">
                 A APN Aulas de Surf é especializada na formação de surfistas com metodologia profissional, segurança e evolução consistente. Entregamos muito mais do que aulas: oferecemos um processo estruturado de evolução que desenvolve desde iniciantes até surfistas avançados, focando em técnica, leitura de mar e posicionamento.
               </p>
@@ -74,6 +88,7 @@ export default function Home() {
       <section id="o-pico" className="py-24 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500 block mb-3">O Pico</span>
             <h2 className="text-4xl font-bold uppercase tracking-tight mb-4">Pico de Matinhos</h2>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">Onde a mágica acontece. Um dos melhores lugares do Brasil para aprender e evoluir.</p>
           </div>
@@ -88,29 +103,99 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-3">Ideal na Maré Seca</h3>
               <p className="text-neutral-400">A onda quebra devagar e é perfeita na última seção para os iniciantes entrarem com segurança.</p>
             </div>
-            <div className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center relative overflow-hidden">
-              <div className="absolute inset-0 z-0 opacity-20">
+            <a href="#surf-camp" className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group cursor-pointer">
+              <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-30 transition-opacity">
                 <Image src="/apn-surf-site/img/surfcamp_garopaba.jpg" alt="Surf Camp" fill className="object-cover" />
               </div>
               <div className="relative z-10">
                 <Calendar className="w-12 h-12 mb-6 text-neutral-300 mx-auto" />
                 <h3 className="text-2xl font-bold mb-3">Surf Camps</h3>
-                <p className="text-neutral-400">Edições passadas e futuras, como Garopaba e em breve Ilha do Mel. Imersão total.</p>
+                <p className="text-neutral-400">Já na 5ª edição: a próxima é na Ilha do Mel, no Grajagan Surf Resort. Imersão total.</p>
+                <span className="inline-flex items-center gap-2 mt-4 text-white font-semibold">Ver o 5º APN Surf Camp <ArrowRight className="w-4 h-4" /></span>
               </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Surf Camp */}
+      <section id="surf-camp" className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center gap-2 bg-neutral-900 text-white rounded-full px-5 py-2 text-sm font-bold uppercase tracking-widest mb-6">
+              <Calendar className="w-4 h-4" /> 5ª Edição · Últimas vagas
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight mb-4">APN Surf Camp</h2>
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              Três dias de imersão total no surf: hospedagem, aulas dentro e fora d&apos;água, conexão e muita energia boa. A 5ª edição acontece no Grajagan Surf Resort, de frente para a Praia Grande, na Ilha do Mel (PR).
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_grajagan.jpg" alt="Grajagan Surf Resort, Ilha do Mel — sede do 5º APN Surf Camp" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
+            <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_turma.jpg" alt="Turma do APN Surf Camp reunida na areia" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_deck.jpg" alt="Deck do Grajagan Surf Resort — um final de semana pra guardar na memória" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-neutral-50 border border-neutral-200 p-8 rounded-2xl text-center">
+              <Calendar className="w-10 h-10 mx-auto mb-4 text-neutral-900" />
+              <h3 className="text-xl font-bold mb-2">25, 26 e 27 de Setembro</h3>
+              <p className="text-neutral-600">Um final de semana inteiro dedicado à sua evolução no surf.</p>
+            </div>
+            <div className="bg-neutral-50 border border-neutral-200 p-8 rounded-2xl text-center">
+              <MapPin className="w-10 h-10 mx-auto mb-4 text-neutral-900" />
+              <h3 className="text-xl font-bold mb-2">Grajagan Surf Resort</h3>
+              <p className="text-neutral-600">Ilha do Mel, Praia Grande — natureza preservada e uma das melhores ondas do Paraná.</p>
+            </div>
+            <div className="bg-neutral-50 border border-neutral-200 p-8 rounded-2xl text-center">
+              <Waves className="w-10 h-10 mx-auto mb-4 text-neutral-900" />
+              <h3 className="text-xl font-bold mb-2">Imersão Completa</h3>
+              <p className="text-neutral-600">Aulas para todos os níveis, treino fora d&apos;água, vídeo-análise e certificado.</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-sm uppercase tracking-widest text-neutral-500 font-semibold mb-6">Com apoio de Hurley · Back Wash · Grajagan Surf Resort · The Basement</p>
+            <a
+              href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20no%205%C2%BA%20APN%20Surf%20Camp%20na%20Ilha%20do%20Mel!"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 bg-neutral-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-neutral-800 transition-colors"
+            >
+              Garantir minha vaga <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>
 
       {/* Image Gallery / Carousel */}
-      <section className="py-24 bg-neutral-900 border-t border-neutral-800 overflow-hidden relative">
+      <section id="galeria" className="py-24 bg-neutral-900 border-t border-neutral-800 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-          <h2 className="text-3xl font-bold text-white uppercase tracking-tight">Galeria & Lifestyle</h2>
-          <p className="text-neutral-400 mt-4">Momentos irados dentro e fora d'água.</p>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500 block mb-3">Direto do nosso Instagram</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">Galeria & Lifestyle</h2>
+          <p className="text-neutral-400 mt-4 max-w-xl mx-auto">Momentos reais dentro e fora d&apos;água, com alunos de todos os níveis.</p>
         </div>
-        
+
         {/* Custom Client Carousel Component */}
         <GalleryCarousel />
+
+        <div className="text-center mt-12">
+          <a
+            href="https://www.instagram.com/apnaulasdesurf_picodematinhos/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 border border-neutral-700 text-neutral-300 px-8 py-3.5 rounded-full font-semibold hover:bg-white hover:text-neutral-900 hover:border-white transition-colors"
+          >
+            <InstagramIcon className="w-5 h-5" /> Ver mais no Instagram
+          </a>
+        </div>
       </section>
 
       {/* The Professor */}
@@ -147,7 +232,7 @@ export default function Home() {
               
               <div className="flex flex-wrap gap-4">
                 <a href="https://www.instagram.com/apnaulasdesurf_picodematinhos/" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 text-neutral-900 border-2 border-neutral-900 px-6 py-3 rounded-full font-bold hover:bg-neutral-900 hover:text-white transition-colors">
-                  <Instagram className="w-5 h-5" /> Instagram da Escola
+                  <InstagramIcon className="w-5 h-5" /> Instagram da Escola
                 </a>
                 <a href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20aulas%20de%20surf!" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 bg-neutral-900 text-white px-6 py-3 rounded-full font-bold hover:bg-neutral-800 transition-colors">
                   Falar no WhatsApp
@@ -158,16 +243,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer / Coming Soon */}
-      <footer className="bg-neutral-900 text-neutral-400 py-12 border-t border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Link href="/" className="inline-block">
-            <div className="w-16 h-16 relative overflow-hidden rounded-full mx-auto mb-6 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer">
-              <Image src="/apn-surf-site/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
+      {/* Footer */}
+      <footer className="bg-neutral-900 text-neutral-400 pt-16 pb-10 border-t border-neutral-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            <div>
+              <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
+                <div className="w-12 h-12 relative overflow-hidden rounded-full border-2 border-neutral-700 group-hover:border-white transition-colors">
+                  <Image src="/apn-surf-site/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
+                </div>
+                <span className="font-bold text-xl tracking-tighter uppercase text-white">APN Surf</span>
+              </Link>
+              <p className="text-sm leading-relaxed">Formando surfistas preparados, conscientes e capazes de evoluir de forma sólida — no Pico de Matinhos, PR.</p>
             </div>
-          </Link>
-          <p className="mb-4">© 2026 APN Aulas de Surf. Pico de Matinhos, PR.</p>
-          <p className="text-sm">Em breve: Sistema de login de alunos e agendamento de aulas.</p>
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-5">Navegue</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#a-escola" className="hover:text-white transition-colors">A Escola</a></li>
+                <li><a href="#o-pico" className="hover:text-white transition-colors">O Pico de Matinhos</a></li>
+                <li><a href="#galeria" className="hover:text-white transition-colors">Galeria</a></li>
+                <li><a href="#surf-camp" className="hover:text-white transition-colors">APN Surf Camp — 5ª edição</a></li>
+                <li><a href="#o-professor" className="hover:text-white transition-colors">O Professor</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-5">Contato</h4>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <a href="https://www.instagram.com/apnaulasdesurf_picodematinhos/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <InstagramIcon className="w-4 h-4" /> @apnaulasdesurf_picodematinhos
+                  </a>
+                </li>
+                <li>
+                  <a href="https://api.whatsapp.com/send?phone=5548996533892" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">WhatsApp: (48) 99653-3892</a>
+                </li>
+                <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Pico de Matinhos — Matinhos, PR</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-neutral-800 pt-8 text-center text-sm">
+            <p>© 2026 APN Aulas de Surf. Todos os direitos reservados.</p>
+          </div>
         </div>
       </footer>
     </div>
