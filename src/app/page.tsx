@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Waves, Calendar, User, ArrowRight, CheckCircle2 } from "lucide-react";
+import { MapPin, Waves, Calendar, User, CheckCircle2 } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import Header from "@/components/Header";
 
@@ -33,33 +33,35 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative z-10 text-center max-w-4xl px-4 flex flex-col items-center mt-auto mb-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 uppercase tracking-tight leading-tight">
-            A evolução começa na areia e <span className="text-neutral-300">continua na onda.</span>
+        <div className="relative z-10 text-center max-w-5xl px-4 flex flex-col items-center mt-auto mb-auto">
+          <h1 className="text-[2.6rem] sm:text-6xl md:text-8xl font-black text-white mb-6 uppercase tracking-tight leading-[0.95]">
+            A evolução começa na areia e continua na onda
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-neutral-200 mb-10 font-light max-w-2xl mx-auto">
-            A APN não forma apenas alunos — forma surfistas preparados, conscientes e capazes de evoluir de forma sólida no surf.
+          <p className="text-base sm:text-lg md:text-2xl text-neutral-100/90 mb-10 max-w-2xl mx-auto">
+            Aulas de surf no Pico de Matinhos com metodologia de competição, para iniciantes e avançados.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
-            <a href="#a-escola" className="bg-white text-neutral-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2">
-              Quero evoluir <ArrowRight className="w-5 h-5" />
+            <a
+              href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20vim%20pelo%20site%2C%20quero%20agendar%20uma%20aula%20de%20surf!"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-agua text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-agua-dark transition-colors flex items-center justify-center"
+            >
+              Agendar uma aula
             </a>
-            <a href="#o-professor" className="bg-transparent border border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center">
-              Conhecer o Método
+            <a href="#a-escola" className="bg-transparent border border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center">
+              Conhecer a escola
             </a>
           </div>
         </div>
       </section>
 
       {/* About The School */}
-      <section id="a-escola" className="py-16 sm:py-24 bg-white">
+      <section id="a-escola" className="scroll-mt-20 py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div className="space-y-8">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-400 block mb-3">A Escola</span>
-                <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight">Escola de Surf Referência</h2>
-              </div>
+              <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight">Escola de surf referência no litoral do Paraná</h2>
               <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
                 A APN Aulas de Surf é especializada na formação de surfistas com metodologia profissional, segurança e evolução consistente. Entregamos muito mais do que aulas: oferecemos um processo estruturado de evolução que desenvolve desde iniciantes até surfistas avançados, focando em técnica, leitura de mar e posicionamento.
               </p>
@@ -85,13 +87,25 @@ export default function Home() {
       </section>
 
       {/* The Spot (O Pico) */}
-      <section id="o-pico" className="py-16 sm:py-24 bg-neutral-900 text-white">
+      <section id="o-pico" className="scroll-mt-20 py-16 sm:py-24 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-16">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500 block mb-3">O Pico</span>
-            <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight mb-4">Pico de Matinhos</h2>
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-4">Pico de Matinhos</h2>
             <p className="text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto">Onde a mágica acontece. Um dos melhores lugares do Brasil para aprender e evoluir.</p>
           </div>
+
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-10 sm:mb-14 aspect-[21/9] sm:aspect-[8/3]">
+            <Image
+              src="/apn-surf-site/img/pico_matinhos_orla.jpg"
+              alt="Vista aérea da orla de Matinhos com o Morro do Boi ao fundo"
+              fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-neutral-900/80 to-transparent" />
+            <p className="absolute bottom-4 left-5 text-sm sm:text-base text-white font-semibold drop-shadow">Praia Brava de Matinhos, casa do Pico</p>
+          </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
             <div className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center">
               <Waves className="w-12 h-12 mb-6 text-neutral-300" />
@@ -111,7 +125,7 @@ export default function Home() {
                 <Calendar className="w-12 h-12 mb-6 text-neutral-300 mx-auto" />
                 <h3 className="text-2xl font-bold mb-3">Surf Camps</h3>
                 <p className="text-neutral-400">Já na 5ª edição: a próxima é na Ilha do Mel, no Grajagan Surf Resort. Imersão total.</p>
-                <span className="inline-flex items-center gap-2 mt-4 text-white font-semibold">Ver o 5º APN Surf Camp <ArrowRight className="w-4 h-4" /></span>
+                <span className="inline-block mt-4 text-white font-semibold underline underline-offset-4 decoration-agua decoration-2">Ver o 5º APN Surf Camp</span>
               </div>
             </a>
           </div>
@@ -119,28 +133,29 @@ export default function Home() {
       </section>
 
       {/* Surf Camp */}
-      <section id="surf-camp" className="py-16 sm:py-24 bg-white overflow-hidden">
+      <section id="surf-camp" className="scroll-mt-20 py-16 sm:py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="inline-flex items-center gap-2 bg-neutral-900 text-white rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold uppercase tracking-widest mb-6">
-              <Calendar className="w-4 h-4" /> 5ª Edição · Últimas vagas
+          <div className="text-center mb-8 sm:mb-10">
+            <span className="inline-block bg-agua text-white rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold mb-5">
+              Últimas vagas para a 5ª edição
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight mb-4">APN Surf Camp</h2>
-            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">APN Surf Camp</h2>
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto">
               Três dias de imersão total no surf: hospedagem, aulas dentro e fora d&apos;água, conexão e muita energia boa. A 5ª edição acontece no Grajagan Surf Resort, de frente para a Praia Grande, na Ilha do Mel (PR).
             </p>
           </div>
 
-          {/* The promo arts are native 4:5 with text baked in — 4:5 frames show them uncropped at every width */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 max-w-md sm:max-w-none lg:max-w-5xl mx-auto mb-10 sm:mb-16">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_hurley.jpg" alt="5º APN Surf Camp — últimas vagas, apresentado pela Hurley" fill sizes="(max-width: 640px) 90vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+          {/* Promo arts are native 4:5 with text baked in. Height is viewport-driven on
+              desktop so the header + images fit one screen; width follows from the ratio. */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 md:gap-6 mb-10 sm:mb-14">
+            <div className="relative aspect-[4/5] w-full max-w-sm sm:w-auto sm:h-[44vh] lg:h-[50vh] sm:max-h-[520px] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_hurley.jpg" alt="5º APN Surf Camp, últimas vagas, apresentado pela Hurley" fill sizes="(max-width: 640px) 90vw, 30vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_turma.jpg" alt="Turma do APN Surf Camp reunida na areia" fill sizes="(max-width: 640px) 90vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative aspect-[4/5] w-full max-w-sm sm:w-auto sm:h-[44vh] lg:h-[50vh] sm:max-h-[520px] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_turma.jpg" alt="Turma do APN Surf Camp reunida na areia" fill sizes="(max-width: 640px) 90vw, 30vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_deck.jpg" alt="Deck do Grajagan Surf Resort — um final de semana pra guardar na memória" fill sizes="(max-width: 640px) 90vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative aspect-[4/5] w-full max-w-sm sm:w-auto sm:h-[44vh] lg:h-[50vh] sm:max-h-[520px] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src="/apn-surf-site/img/ig/surfcamp5_deck.jpg" alt="Deck do Grajagan Surf Resort, um final de semana pra guardar na memória" fill sizes="(max-width: 640px) 90vw, 30vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
 
@@ -153,7 +168,7 @@ export default function Home() {
             <div className="bg-neutral-50 border border-neutral-200 p-6 sm:p-8 rounded-2xl text-center">
               <MapPin className="w-10 h-10 mx-auto mb-4 text-neutral-900" />
               <h3 className="text-xl font-bold mb-2">Grajagan Surf Resort</h3>
-              <p className="text-neutral-600">Ilha do Mel, Praia Grande — natureza preservada e uma das melhores ondas do Paraná.</p>
+              <p className="text-neutral-600">Na Praia Grande da Ilha do Mel, com natureza preservada e uma das melhores ondas do Paraná.</p>
             </div>
             <div className="bg-neutral-50 border border-neutral-200 p-6 sm:p-8 rounded-2xl text-center sm:col-span-2 lg:col-span-1">
               <Waves className="w-10 h-10 mx-auto mb-4 text-neutral-900" />
@@ -163,25 +178,24 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-neutral-500 font-semibold mb-6 px-2">Com apoio de Hurley · Back Wash · Grajagan Surf Resort · The Basement</p>
+            <p className="text-sm text-neutral-500 mb-6 px-2">Com apoio de Hurley, Back Wash, Grajagan Surf Resort e The Basement</p>
             <a
               href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20no%205%C2%BA%20APN%20Surf%20Camp%20na%20Ilha%20do%20Mel!"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-neutral-900 text-white w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-neutral-800 transition-colors"
+              className="inline-flex items-center justify-center bg-agua text-white w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-agua-dark transition-colors"
             >
-              Garantir minha vaga <ArrowRight className="w-5 h-5" />
+              Garantir minha vaga no WhatsApp
             </a>
           </div>
         </div>
       </section>
 
       {/* Image Gallery / Carousel */}
-      <section id="galeria" className="py-16 sm:py-24 bg-neutral-900 border-t border-neutral-800 overflow-hidden relative">
+      <section id="galeria" className="scroll-mt-20 py-16 sm:py-24 bg-neutral-900 border-t border-neutral-800 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500 block mb-3">Direto do nosso Instagram</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">Galeria & Lifestyle</h2>
-          <p className="text-neutral-400 mt-4 max-w-xl mx-auto">Momentos reais dentro e fora d&apos;água, com alunos de todos os níveis.</p>
+          <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Galeria</h2>
+          <p className="text-neutral-400 mt-4 max-w-xl mx-auto">Momentos reais dentro e fora d&apos;água, direto do nosso Instagram.</p>
         </div>
 
         {/* Custom Client Carousel Component */}
@@ -200,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* The Professor */}
-      <section id="o-professor" className="py-16 sm:py-24 bg-neutral-100">
+      <section id="o-professor" className="scroll-mt-20 py-16 sm:py-24 bg-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl sm:rounded-[3rem] overflow-hidden shadow-xl flex flex-col md:flex-row">
             <div className="md:w-1/2 relative min-h-[280px] sm:min-h-[400px]">
@@ -255,7 +269,7 @@ export default function Home() {
                 </div>
                 <span className="font-bold text-xl tracking-tighter uppercase text-white">APN Surf</span>
               </Link>
-              <p className="text-sm leading-relaxed">Formando surfistas preparados, conscientes e capazes de evoluir de forma sólida — no Pico de Matinhos, PR.</p>
+              <p className="text-sm leading-relaxed">Formando surfistas preparados, conscientes e capazes de evoluir de forma sólida no Pico de Matinhos, PR.</p>
             </div>
             <div>
               <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-5">Navegue</h4>
@@ -263,7 +277,7 @@ export default function Home() {
                 <li><a href="#a-escola" className="hover:text-white transition-colors">A Escola</a></li>
                 <li><a href="#o-pico" className="hover:text-white transition-colors">O Pico de Matinhos</a></li>
                 <li><a href="#galeria" className="hover:text-white transition-colors">Galeria</a></li>
-                <li><a href="#surf-camp" className="hover:text-white transition-colors">APN Surf Camp — 5ª edição</a></li>
+                <li><a href="#surf-camp" className="hover:text-white transition-colors">APN Surf Camp</a></li>
                 <li><a href="#o-professor" className="hover:text-white transition-colors">O Professor</a></li>
               </ul>
             </div>
@@ -278,7 +292,7 @@ export default function Home() {
                 <li>
                   <a href="https://api.whatsapp.com/send?phone=5548996533892" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">WhatsApp: (48) 99653-3892</a>
                 </li>
-                <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Pico de Matinhos — Matinhos, PR</li>
+                <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Pico de Matinhos, Matinhos (PR)</li>
               </ul>
             </div>
           </div>

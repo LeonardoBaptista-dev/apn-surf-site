@@ -9,16 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Petrol-tinted darks (South Atlantic water) + warm sand lights
         neutral: {
-          900: '#171717',
-          800: '#262626',
-          700: '#404040',
-          500: '#737373',
-          300: '#d4d4d4',
-          100: '#f5f5f5',
-          50: '#fafafa',
-        }
-      }
+          900: '#0E2127',
+          800: '#16323A',
+          700: '#33474D',
+          600: '#4C5F63',
+          500: '#6E7E7F',
+          400: '#93A09F',
+          300: '#C9CFC8',
+          200: '#DEDBD1',
+          100: '#EFECE3',
+          50: '#F8F6F1',
+        },
+        agua: {
+          DEFAULT: '#0E8A78',
+          dark: '#0B6B5D',
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-archivo)', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],

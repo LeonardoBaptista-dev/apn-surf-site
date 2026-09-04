@@ -11,8 +11,8 @@ const navLinks = [
   { href: "#inicio", label: "Início" },
   { href: "#a-escola", label: "A Escola" },
   { href: "#o-pico", label: "O Pico" },
-  { href: "#galeria", label: "Galeria" },
   { href: "#surf-camp", label: "Surf Camp", badge: "5ª" },
+  { href: "#galeria", label: "Galeria" },
   { href: "#o-professor", label: "O Professor" },
 ];
 

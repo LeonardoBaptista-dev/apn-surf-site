@@ -20,6 +20,7 @@ const items = [
 
 export default function GalleryCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const touchX = useRef<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -145,38 +146,38 @@ export default function GalleryCarousel() {
       {/* Lightbox Modal */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex flex-col bg-neutral-900/95 backdrop-blur-md"
           onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label={items[selectedIndex].alt}
         >
-          <button
-            onClick={closeModal}
-            aria-label="Fechar"
-            className="absolute top-6 right-6 z-50 text-white/50 hover:text-white p-3 rounded-full"
-          >
-            <X className="w-8 h-8" />
-          </button>
+          {/* Top bar */}
+          <div className="flex items-center justify-between px-4 sm:px-8 h-16 shrink-0" onClick={(e) => e.stopPropagation()}>
+            <p className="text-neutral-400 text-sm font-medium tabular-nums">{selectedIndex + 1} de {items.length}</p>
+            <button
+              onClick={closeModal}
+              aria-label="Fechar galeria"
+              className="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 text-white hover:bg-white hover:text-neutral-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
 
-          <button
-            onClick={prevImage}
-            aria-label="Foto anterior"
-            className="absolute left-2 md:left-8 z-50 text-white/50 hover:text-white p-4"
-          >
-            <ChevronLeft className="w-10 h-10" />
-          </button>
-
-          <button
-            onClick={nextImage}
-            aria-label="Próxima foto"
-            className="absolute right-2 md:right-8 z-50 text-white/50 hover:text-white p-4"
-          >
-            <ChevronRight className="w-10 h-10" />
-          </button>
-
+          {/* Stage */}
           <div
-            className="relative w-full max-w-6xl h-[80vh] flex flex-col items-center justify-center px-12"
+            className="relative flex-1 min-h-0 px-4 sm:px-20 pb-4"
             onClick={(e) => e.stopPropagation()}
+            onTouchStart={(e) => { touchX.current = e.touches[0].clientX; }}
+            onTouchEnd={(e) => {
+              if (touchX.current === null) return;
+              const dx = e.changedTouches[0].clientX - touchX.current;
+              if (dx < -48) nextImage();
+              if (dx > 48) prevImage();
+              touchX.current = null;
+            }}
           >
-            <div className="relative w-full h-[calc(100%-80px)]">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src={items[selectedIndex].src}
                 alt={items[selectedIndex].alt}
@@ -186,12 +187,37 @@ export default function GalleryCarousel() {
               />
             </div>
 
-            <div className="mt-6 flex flex-col items-center justify-center pointer-events-none">
-              <div className="bg-neutral-900/80 backdrop-blur-md border border-neutral-700/50 px-8 py-3 rounded-full shadow-2xl flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
-                <h4 className="text-white text-lg font-semibold tracking-wide">{items[selectedIndex].alt}</h4>
-                <div className="hidden sm:block w-[1px] h-5 bg-neutral-600"></div>
-                <p className="text-neutral-400 text-sm uppercase tracking-widest font-medium">{selectedIndex + 1} / {items.length}</p>
-              </div>
+            <button
+              onClick={prevImage}
+              aria-label="Foto anterior"
+              className="hidden sm:flex absolute left-5 top-1/2 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white hover:text-neutral-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <button
+              onClick={nextImage}
+              aria-label="Próxima foto"
+              className="hidden sm:flex absolute right-5 top-1/2 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white hover:text-neutral-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Caption + thumbnails */}
+          <div className="shrink-0 pb-5 px-4" onClick={(e) => e.stopPropagation()}>
+            <p className="text-white text-center text-base sm:text-lg font-semibold mb-4">{items[selectedIndex].alt}</p>
+            <div className="flex justify-center gap-2 overflow-x-auto hide-scrollbars py-1">
+              {items.map((item, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelectedIndex(i)}
+                  aria-label={`Ver foto: ${item.alt}`}
+                  className={`relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-lg overflow-hidden transition-all ${i === selectedIndex ? "ring-2 ring-white opacity-100" : "opacity-40 hover:opacity-80"}`}
+                >
+                  <Image src={item.src} alt="" fill sizes="56px" className="object-cover" />
+                </button>
+              ))}
             </div>
           </div>
         </div>

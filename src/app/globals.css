@@ -7,8 +7,18 @@ html {
 }
 
 body {
-  background-color: #fafafa;
-  color: #171717;
+  background-color: #F8F6F1;
+  color: #0E2127;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
