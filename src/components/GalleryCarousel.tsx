@@ -177,13 +177,15 @@ export default function GalleryCarousel() {
               touchX.current = null;
             }}
           >
-            <div className="relative w-full h-full rounded-2xl overflow-hidden">
-              <Image
+            <div className="w-full h-full flex items-center justify-center">
+              {/* Plain img so the frame hugs the photo itself: rounded corners, shadow
+                  and ring land on the visible image, not on an invisible letterbox. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={items[selectedIndex].src}
                 alt={items[selectedIndex].alt}
-                fill
-                className="object-contain"
-                priority
+                draggable={false}
+                className="max-w-full max-h-full w-auto h-auto rounded-2xl shadow-2xl shadow-black/60 ring-1 ring-white/15 select-none"
               />
             </div>
 
