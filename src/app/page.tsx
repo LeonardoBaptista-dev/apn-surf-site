@@ -94,16 +94,16 @@ export default function Home() {
             <p className="text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto">Onde a mágica acontece. Um dos melhores lugares do Brasil para aprender e evoluir.</p>
           </div>
 
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-10 sm:mb-14 aspect-[21/9] sm:aspect-[8/3]">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-10 sm:mb-14 aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]">
             <Image
-              src="/apn-surf-site/img/pico_matinhos_orla.jpg"
-              alt="Vista aérea da orla de Matinhos com o Morro do Boi ao fundo"
+              src="/apn-surf-site/img/pico_amanhecer.jpg"
+              alt="Amanhecer no Pico de Matinhos, com o mirante sobre as pedras e o mar ao fundo"
               fill
               sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover"
+              className="object-cover object-[center_65%]"
             />
             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-neutral-900/80 to-transparent" />
-            <p className="absolute bottom-4 left-5 text-sm sm:text-base text-white font-semibold drop-shadow">Praia Brava de Matinhos, casa do Pico</p>
+            <p className="absolute bottom-4 left-5 text-sm sm:text-base text-white font-semibold drop-shadow">Amanhecer no Pico de Matinhos</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
