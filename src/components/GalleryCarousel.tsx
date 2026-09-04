@@ -93,7 +93,7 @@ export default function GalleryCarousel() {
 
   return (
     <>
-      <div className="relative w-full max-w-7xl mx-auto">
+      <div className="relative w-full max-w-screen-2xl mx-auto">
         {/* Navigation Arrows */}
         <button
           onClick={() => scroll("left")}

@@ -58,7 +58,7 @@ export default function Home() {
 
       {/* About The School */}
       <section id="a-escola" className="scroll-mt-20 pt-6 sm:pt-8 pb-12 sm:pb-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight">Escola de surf referência no litoral do Paraná</h2>
@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* The Spot (O Pico) */}
       <section id="o-pico" className="scroll-mt-20 pt-6 sm:pt-8 pb-12 sm:pb-16 bg-neutral-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-4">
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-2">Pico de Matinhos</h2>
             <p className="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto">Onde a mágica acontece. Um dos melhores lugares do Brasil para aprender e evoluir.</p>
@@ -139,7 +139,7 @@ export default function Home() {
 
       {/* Surf Camp */}
       <section id="surf-camp" className="scroll-mt-20 pt-6 sm:pt-8 pb-12 sm:pb-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* All key info sits above the images so nothing essential hides below the fold */}
           <div className="text-center mb-4">
             <span className="inline-block bg-neutral-900 text-white rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-3">
@@ -194,7 +194,7 @@ export default function Home() {
 
       {/* Image Gallery / Carousel */}
       <section id="galeria" className="scroll-mt-20 pt-6 sm:pt-8 pb-12 sm:pb-16 bg-neutral-900 border-t border-neutral-800 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 text-center">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Galeria</h2>
           <p className="text-neutral-400 mt-3 max-w-xl mx-auto">Momentos reais dentro e fora d&apos;água, direto do nosso Instagram.</p>
         </div>
@@ -216,7 +216,7 @@ export default function Home() {
 
       {/* The Professor */}
       <section id="o-professor" className="scroll-mt-20 pt-6 sm:pt-8 pb-12 sm:pb-16 bg-neutral-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl sm:rounded-[3rem] overflow-hidden shadow-xl flex flex-col md:flex-row">
             <div className="md:w-1/2 relative min-h-[280px] sm:min-h-[400px]">
               <Image src="/apn-surf-site/img/Aminandes-Pamplona-tubo.jpg" alt="Aminandes Pamplona Neto no Tubo" fill className="object-cover" />
@@ -261,7 +261,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-neutral-900 text-neutral-400 pt-16 pb-10 border-t border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 mb-12">
             <div>
               <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
