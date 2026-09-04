@@ -122,7 +122,7 @@ export default function GalleryCarousel() {
               data-card
               onClick={() => openModal(i)}
               aria-label={`Ampliar foto: ${item.alt}`}
-              className="relative flex-none w-[72%] sm:w-[44%] lg:w-[30%] aspect-[4/5] shrink-0 snap-start rounded-2xl overflow-hidden group shadow-lg cursor-pointer bg-neutral-800 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="relative flex-none w-[68%] sm:w-[38%] lg:w-[24%] aspect-[4/5] shrink-0 snap-start rounded-2xl overflow-hidden group shadow-lg cursor-pointer bg-neutral-800 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <Image
                 src={item.src}
