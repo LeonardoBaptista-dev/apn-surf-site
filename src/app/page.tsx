@@ -89,12 +89,12 @@ export default function Home() {
       {/* The Spot (O Pico) */}
       <section id="o-pico" className="scroll-mt-20 py-12 sm:py-16 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-3">Pico de Matinhos</h2>
+          <div className="text-center mb-5 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-2">Pico de Matinhos</h2>
             <p className="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto">Onde a mágica acontece. Um dos melhores lugares do Brasil para aprender e evoluir.</p>
           </div>
 
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8 sm:mb-12 aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] lg:max-h-[46vh] w-full">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-5 sm:mb-6 aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] max-h-[34vh] sm:max-h-[38vh] w-full">
             <Image
               src="/apn-surf-site/img/pico_amanhecer.jpg"
               alt="Amanhecer no Pico de Matinhos, com o mirante sobre as pedras e o mar ao fundo"
@@ -106,26 +106,31 @@ export default function Home() {
             <p className="absolute bottom-4 left-5 text-sm sm:text-base text-white font-semibold drop-shadow">Amanhecer no Pico de Matinhos</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-            <div className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center">
-              <Waves className="w-12 h-12 mb-6 text-neutral-300" />
-              <h3 className="text-2xl font-bold mb-3">Direita Perfeita</h3>
-              <p className="text-neutral-400">Point break clássico de direita, fundo de areia, com ondas longas e manobráveis.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            <div className="bg-neutral-800 p-5 sm:p-6 rounded-2xl">
+              <div className="flex items-center gap-3 mb-2">
+                <Waves className="w-6 h-6 text-neutral-300 shrink-0" />
+                <h3 className="text-lg sm:text-xl font-bold">Direita Perfeita</h3>
+              </div>
+              <p className="text-sm sm:text-base text-neutral-400">Point break clássico de direita, fundo de areia, com ondas longas e manobráveis.</p>
             </div>
-            <div className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center">
-              <MapPin className="w-12 h-12 mb-6 text-neutral-300" />
-              <h3 className="text-2xl font-bold mb-3">Ideal na Maré Seca</h3>
-              <p className="text-neutral-400">A onda quebra devagar e é perfeita na última seção para os iniciantes entrarem com segurança.</p>
+            <div className="bg-neutral-800 p-5 sm:p-6 rounded-2xl">
+              <div className="flex items-center gap-3 mb-2">
+                <MapPin className="w-6 h-6 text-neutral-300 shrink-0" />
+                <h3 className="text-lg sm:text-xl font-bold">Ideal na Maré Seca</h3>
+              </div>
+              <p className="text-sm sm:text-base text-neutral-400">A onda quebra devagar e é perfeita na última seção para os iniciantes entrarem com segurança.</p>
             </div>
-            <a href="#surf-camp" className="bg-neutral-800 p-8 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group cursor-pointer sm:col-span-2 lg:col-span-1">
+            <a href="#surf-camp" className="bg-neutral-800 p-5 sm:p-6 rounded-2xl relative overflow-hidden group cursor-pointer sm:col-span-2 lg:col-span-1">
               <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-30 transition-opacity">
                 <Image src="/apn-surf-site/img/surfcamp_garopaba.jpg" alt="Surf Camp" fill className="object-cover" />
               </div>
               <div className="relative z-10">
-                <Calendar className="w-12 h-12 mb-6 text-neutral-300 mx-auto" />
-                <h3 className="text-2xl font-bold mb-3">Surf Camps</h3>
-                <p className="text-neutral-400">Já na 5ª edição: a próxima é na Ilha do Mel, no Grajagan Surf Resort. Imersão total.</p>
-                <span className="inline-block mt-4 text-white font-semibold underline underline-offset-4 decoration-white/60 decoration-2">Ver o 5º APN Surf Camp</span>
+                <div className="flex items-center gap-3 mb-2">
+                  <Calendar className="w-6 h-6 text-neutral-300 shrink-0" />
+                  <h3 className="text-lg sm:text-xl font-bold">Surf Camps</h3>
+                </div>
+                <p className="text-sm sm:text-base text-neutral-400">Já na 5ª edição: a próxima é na Ilha do Mel, no Grajagan Surf Resort. <span className="text-white font-semibold underline underline-offset-4 decoration-white/60 decoration-2">Ver o 5º APN Surf Camp</span></p>
               </div>
             </a>
           </div>
