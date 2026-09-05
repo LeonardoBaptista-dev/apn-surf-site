@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Height-based variants: laptops at 125% scaling leave ~470px of usable
+      // height below the fixed bar, so sections need to shrink by height too.
+      screens: {
+        short: { raw: "(max-height: 800px)" },
+        shorter: { raw: "(max-height: 620px)" },
+      },
       colors: {
         // Petrol-tinted darks (South Atlantic water) + warm sand lights
         neutral: {
