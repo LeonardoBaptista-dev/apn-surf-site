@@ -268,6 +268,7 @@ export default function Home() {
                 </li>
               </ul>
               
+              <a href="/apn-surf-site/oprofessor" className="inline-flex items-center gap-2 text-neutral-900 font-bold underline underline-offset-4 decoration-2 decoration-neutral-300 hover:decoration-neutral-900 transition-colors mb-6">Conheça toda a trajetória do Aminandes</a>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a href="https://www.instagram.com/apnaulasdesurf_picodematinhos/" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 text-neutral-900 border-2 border-neutral-900 px-6 py-3 rounded-full font-bold hover:bg-neutral-900 hover:text-white transition-colors">
                   <InstagramIcon className="w-5 h-5" /> Instagram da Escola

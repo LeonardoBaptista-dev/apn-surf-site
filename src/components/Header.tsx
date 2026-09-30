@@ -8,19 +8,19 @@ const WHATSAPP_URL =
   "https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20vim%20pelo%20site%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20aulas%20de%20surf!";
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#a-escola", label: "A Escola" },
-  { href: "#o-pico", label: "O Pico" },
-  { href: "#surf-camp", label: "Surf Camp", badge: "5ª" },
-  { href: "#galeria", label: "Galeria" },
-  { href: "#o-professor", label: "O Professor" },
+  { href: "/apn-surf-site/#inicio", label: "Início" },
+  { href: "/apn-surf-site/#a-escola", label: "A Escola" },
+  { href: "/apn-surf-site/#o-pico", label: "O Pico" },
+  { href: "/apn-surf-site/#surf-camp", label: "Surf Camp", badge: "5ª" },
+  { href: "/apn-surf-site/#galeria", label: "Galeria" },
+  { href: "/apn-surf-site/oprofessor", label: "O Professor" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200">
+    <header className="fixed top-0 left-0 w-full z-50 text-neutral-900 bg-white/90 backdrop-blur-md border-b border-neutral-200">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <a href="/apn-surf-site/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
