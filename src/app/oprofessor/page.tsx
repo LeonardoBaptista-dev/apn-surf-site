@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import InViewVideo from "@/components/InViewVideo";
 
 export const metadata: Metadata = {
-  title: "Aminandes Pamplona Neto | APN Surf Escola",
+  title: "Aminandes Pamplona Neto | APN Aulas de Surf e Coach",
   description:
     "A trajetória de Aminandes Pamplona Neto: do projeto Surf na Escola em Matinhos a 10x campeão paranaense, QS da WSL e fundador da APN Aulas de Surf.",
 };

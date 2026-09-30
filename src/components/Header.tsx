@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/apn-surf-site/#inicio", label: "Início" },
   { href: "/apn-surf-site/#a-escola", label: "A Escola" },
   { href: "/apn-surf-site/#o-pico", label: "O Pico" },
-  { href: "/apn-surf-site/#surf-camp", label: "Surf Camp", badge: "5ª" },
+  { href: "/apn-surf-site/#surf-camp", label: "Surf Camp", badge: "6ª" },
   { href: "/apn-surf-site/#galeria", label: "Galeria" },
   { href: "/apn-surf-site/oprofessor", label: "O Professor" },
 ];
@@ -27,7 +27,10 @@ export default function Header() {
             <div className="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden rounded-full border-2 border-neutral-900 group-hover:scale-105 transition-transform">
               <Image src="/apn-surf-site/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
             </div>
-            <span className="font-bold text-base sm:text-xl md:text-2xl tracking-tighter uppercase whitespace-nowrap group-hover:opacity-80 transition-opacity">APN Surf Escola</span>
+            <span className="flex flex-col leading-none uppercase group-hover:opacity-80 transition-opacity">
+              <span className="font-bold text-base sm:text-xl md:text-2xl tracking-tighter whitespace-nowrap">APN Aulas de Surf</span>
+              <span className="font-semibold text-[11px] sm:text-xs md:text-sm tracking-[0.2em] text-neutral-500 mt-1 whitespace-nowrap">e Coach</span>
+            </span>
           </a>
 
           {/* Desktop Nav */}

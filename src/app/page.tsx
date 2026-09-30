@@ -133,7 +133,7 @@ export default function Home() {
                   <Calendar className="w-6 h-6 text-neutral-300 shrink-0" />
                   <h3 className="text-lg sm:text-xl font-bold">Surf Camps</h3>
                 </div>
-                <p className="text-sm sm:text-base text-neutral-400">5 edições realizadas. A mais recente foi na Ilha do Mel, no Grajagan Surf Resort. <span className="text-white font-semibold underline underline-offset-4 decoration-white/60 decoration-2">Ver como foi</span></p>
+                <p className="text-sm sm:text-base text-neutral-400">6ª edição em outubro, na Praia do Rosa (SC), com inscrições abertas. <span className="text-white font-semibold underline underline-offset-4 decoration-white/60 decoration-2">Ver detalhes</span></p>
               </div>
             </a>
           </div>
@@ -145,20 +145,20 @@ export default function Home() {
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-4">
             <span className="inline-block bg-neutral-900 text-white rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-3">
-              5ª edição realizada
+              Inscrições abertas para a 6ª edição
             </span>
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-2">APN Surf Camp</h2>
             <p className="text-base text-neutral-600 max-w-2xl mx-auto">
-              Por alguns dias, a rotina ficou pra trás: só surf, natureza, novas conexões e experiências que ficam na memória. A 5ª edição aconteceu no Grajagan Surf Resort, na Praia Grande da Ilha do Mel (PR).
+              Três dias de imersão: hospedagem, aulas dentro e fora d&apos;água, vídeo-análise e certificado. A próxima parada é a Praia do Rosa, em Santa Catarina.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
             <span className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-800 rounded-full px-4 py-2 text-sm font-semibold">
-              <Calendar className="w-4 h-4" /> Setembro de 2026
+              <Calendar className="w-4 h-4" /> 23, 24 e 25 de outubro
             </span>
             <span className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-800 rounded-full px-4 py-2 text-sm font-semibold">
-              <MapPin className="w-4 h-4" /> Grajagan Surf Resort, Ilha do Mel (PR)
+              <MapPin className="w-4 h-4" /> Praia do Rosa (SC)
             </span>
             <span className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-800 rounded-full px-4 py-2 text-sm font-semibold">
               <Waves className="w-4 h-4" /> Todos os níveis
@@ -167,12 +167,12 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
             <a
-              href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20quero%20saber%20do%20pr%C3%B3ximo%20APN%20Surf%20Camp!"
+              href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20no%206%C2%BA%20APN%20Surf%20Camp%20na%20Praia%20do%20Rosa!"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-neutral-900 text-white w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-base hover:bg-neutral-800 transition-colors"
             >
-              Quero ir no próximo Surf Camp
+              Garantir minha vaga na 6ª edição
             </a>
             <a
               href="https://www.instagram.com/reel/Dd4UftwtN-5/"
@@ -180,10 +180,11 @@ export default function Home() {
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2 border-2 border-neutral-900 text-neutral-900 w-full sm:w-auto px-8 py-3 rounded-full font-bold text-base hover:bg-neutral-900 hover:text-white transition-colors"
             >
-              <InstagramIcon className="w-5 h-5" /> Ver como foi
+              <InstagramIcon className="w-5 h-5" /> Ver como foi a 5ª edição
             </a>
           </div>
 
+          <p className="text-center text-sm font-semibold text-neutral-500 mb-3">Como foi a 5ª edição, no Grajagan Surf Resort, na Ilha do Mel (PR)</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 w-full mb-6">
             <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-xl group">
               <Image src="/apn-surf-site/img/surfcamp5/manobra.jpg" alt="Surfista do 5º APN Surf Camp fazendo manobra na crista da onda" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -197,7 +198,7 @@ export default function Home() {
           </div>
 
           <div className="text-center text-sm px-2">
-            <p className="text-neutral-500 mb-2">Obrigado aos parceiros que fizeram esse Camp acontecer</p>
+            <p className="text-neutral-500 mb-2">Parceiros da 5ª edição</p>
             <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
               <a href="https://www.instagram.com/hurley/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@hurley</a>
               <a href="https://www.instagram.com/backwashstore/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@backwashstore</a>
