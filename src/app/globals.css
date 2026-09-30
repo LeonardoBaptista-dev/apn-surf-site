@@ -31,3 +31,21 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+/* Hero poster: instant first paint behind the video, and the fallback when the
+   video is skipped. Orientation-matched like the video sources. */
+.hero-poster {
+  background-color: #0E2127;
+  background-image: url("/apn-surf-site/video/hero-surf-landscape.jpg");
+  background-size: cover;
+  background-position: center;
+}
+@media (max-aspect-ratio: 1/1) {
+  .hero-poster {
+    background-image: url("/apn-surf-site/video/hero-surf-portrait.jpg");
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MapPin, Waves, Calendar, User, CheckCircle2 } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import Header from "@/components/Header";
+import HeroVideo from "@/components/HeroVideo";
 
 // lucide-react removed brand icons, so the Instagram glyph lives here as plain SVG
 function InstagramIcon({ className }: { className?: string }) {
@@ -22,22 +23,21 @@ export default function Home() {
       {/* Header */}
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section: looping surf video over a poster that paints instantly */}
       <section id="inicio" className="relative w-full min-h-[100svh] bg-neutral-900 flex flex-col items-center justify-center overflow-hidden pt-28 pb-12">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <Image 
-            src="/apn-surf-site/img/aula.jpg" 
-            alt="Surf APN" 
-            fill 
-            className="object-cover object-[center_35%] md:object-center"
-            priority
-          />
+        <div className="hero-poster absolute inset-0 z-0" aria-hidden="true" />
+        <div className="absolute inset-0 z-0">
+          <HeroVideo />
         </div>
+        {/* Legibility: darker at top (fixed bar) and bottom, soft vignette at the edges */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-neutral-900/80 via-neutral-900/45 to-neutral-900/85" aria-hidden="true" />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(14,33,39,0.55)_100%)]" aria-hidden="true" />
+
         <div className="relative z-10 text-center max-w-5xl px-4 flex flex-col items-center mt-auto mb-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase tracking-tight leading-tight drop-shadow-[0_2px_24px_rgba(0,0,0,0.35)]">
             A evolução começa na areia e continua na onda
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-neutral-100/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl font-light text-white/85 mb-8 max-w-2xl mx-auto">
             Aulas de surf no Pico de Matinhos com metodologia de competição, para iniciantes e avançados.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
@@ -45,11 +45,14 @@ export default function Home() {
               href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20vim%20pelo%20site%2C%20quero%20agendar%20uma%20aula%20de%20surf!"
               target="_blank"
               rel="noreferrer"
-              className="bg-white text-neutral-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-200 transition-colors flex items-center justify-center"
+              className="bg-white text-neutral-900 px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center shadow-lg shadow-black/20 transition-all duration-300 ease-in-out hover:bg-neutral-100 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
             >
               Agendar uma aula
             </a>
-            <a href="#a-escola" className="bg-transparent border border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center">
+            <a
+              href="#a-escola"
+              className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
               Conhecer a escola
             </a>
           </div>
