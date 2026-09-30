@@ -27,7 +27,7 @@ export default function Header() {
             <div className="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden rounded-full border-2 border-neutral-900 group-hover:scale-105 transition-transform">
               <Image src="/apn-surf-site/img/logo.jpg" alt="APN Surf Logo" fill className="object-cover" />
             </div>
-            <span className="font-bold text-xl md:text-2xl tracking-tighter uppercase group-hover:opacity-80 transition-opacity">APN Surf</span>
+            <span className="font-bold text-base sm:text-xl md:text-2xl tracking-tighter uppercase whitespace-nowrap group-hover:opacity-80 transition-opacity">APN Surf Escola</span>
           </a>
 
           {/* Desktop Nav */}
