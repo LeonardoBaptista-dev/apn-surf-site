@@ -133,7 +133,7 @@ export default function Home() {
                   <Calendar className="w-6 h-6 text-neutral-300 shrink-0" />
                   <h3 className="text-lg sm:text-xl font-bold">Surf Camps</h3>
                 </div>
-                <p className="text-sm sm:text-base text-neutral-400">Já na 5ª edição: a próxima é na Ilha do Mel, no Grajagan Surf Resort. <span className="text-white font-semibold underline underline-offset-4 decoration-white/60 decoration-2">Ver o 5º APN Surf Camp</span></p>
+                <p className="text-sm sm:text-base text-neutral-400">5 edições realizadas. A mais recente foi na Ilha do Mel, no Grajagan Surf Resort. <span className="text-white font-semibold underline underline-offset-4 decoration-white/60 decoration-2">Ver como foi</span></p>
               </div>
             </a>
           </div>
@@ -143,20 +143,19 @@ export default function Home() {
       {/* Surf Camp */}
       <section id="surf-camp" className="scroll-mt-20 pt-6 sm:pt-8 pb-12 sm:pb-16 bg-white overflow-hidden">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* All key info sits above the images so nothing essential hides below the fold */}
           <div className="text-center mb-4">
             <span className="inline-block bg-neutral-900 text-white rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-3">
-              Últimas vagas para a 5ª edição
+              5ª edição realizada
             </span>
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-2">APN Surf Camp</h2>
             <p className="text-base text-neutral-600 max-w-2xl mx-auto">
-              Três dias de imersão total: hospedagem, aulas dentro e fora d&apos;água, vídeo-análise e certificado.
+              Por alguns dias, a rotina ficou pra trás: só surf, natureza, novas conexões e experiências que ficam na memória. A 5ª edição aconteceu no Grajagan Surf Resort, na Praia Grande da Ilha do Mel (PR).
             </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
             <span className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-800 rounded-full px-4 py-2 text-sm font-semibold">
-              <Calendar className="w-4 h-4" /> 25, 26 e 27 de setembro
+              <Calendar className="w-4 h-4" /> Setembro de 2026
             </span>
             <span className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-800 rounded-full px-4 py-2 text-sm font-semibold">
               <MapPin className="w-4 h-4" /> Grajagan Surf Resort, Ilha do Mel (PR)
@@ -166,32 +165,52 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="text-center mb-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
             <a
-              href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20no%205%C2%BA%20APN%20Surf%20Camp%20na%20Ilha%20do%20Mel!"
+              href="https://api.whatsapp.com/send?phone=5548996533892&text=Ol%C3%A1%2C%20quero%20saber%20do%20pr%C3%B3ximo%20APN%20Surf%20Camp!"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-neutral-900 text-white w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-base hover:bg-neutral-800 transition-colors"
             >
-              Garantir minha vaga no WhatsApp
+              Quero ir no próximo Surf Camp
+            </a>
+            <a
+              href="https://www.instagram.com/reel/Dd4UftwtN-5/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 border-2 border-neutral-900 text-neutral-900 w-full sm:w-auto px-8 py-3 rounded-full font-bold text-base hover:bg-neutral-900 hover:text-white transition-colors"
+            >
+              <InstagramIcon className="w-5 h-5" /> Ver como foi
             </a>
           </div>
 
-          {/* Promo arts are native 4:5 with text baked in. Width-driven grid fills the
-              whole row; the essential info above stays visible without scrolling. */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 w-full mb-6">
             <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_hurley.jpg" alt="5º APN Surf Camp, últimas vagas, apresentado pela Hurley" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/apn-surf-site/img/surfcamp5/manobra.jpg" alt="Surfista do 5º APN Surf Camp fazendo manobra na crista da onda" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_turma.jpg" alt="Turma do APN Surf Camp reunida na areia" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/apn-surf-site/img/surfcamp5/aluna-em-pe.jpg" alt="Aluna de pé na prancha durante o 5º APN Surf Camp" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-xl group">
-              <Image src="/apn-surf-site/img/ig/surfcamp5_deck.jpg" alt="Deck do Grajagan Surf Resort, um final de semana pra guardar na memória" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/apn-surf-site/img/surfcamp5/turma-na-areia.jpg" alt="Turma do 5º APN Surf Camp reunida na areia com as pranchas" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
 
-          <p className="text-center text-sm text-neutral-500 px-2">Com apoio de Hurley, Back Wash, Grajagan Surf Resort e The Basement</p>
+          <div className="text-center text-sm px-2">
+            <p className="text-neutral-500 mb-2">Obrigado aos parceiros que fizeram esse Camp acontecer</p>
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
+              <a href="https://www.instagram.com/hurley/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@hurley</a>
+              <a href="https://www.instagram.com/backwashstore/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@backwashstore</a>
+              <a href="https://www.instagram.com/grajagansurfresort/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@grajagansurfresort</a>
+              <a href="https://www.instagram.com/basement.curitiba/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@basement.curitiba</a>
+              <a href="https://www.instagram.com/kassaicafe/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@kassaicafe</a>
+              <a href="https://www.instagram.com/useblink/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@useblink</a>
+              <a href="https://www.instagram.com/buenomate.co/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@buenomate.co</a>
+              <a href="https://www.instagram.com/abimoatelie/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@abimoatelie</a>
+              <a href="https://www.instagram.com/manacomvisual/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@manacomvisual</a>
+              <a href="https://www.instagram.com/vicgurgel/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900 underline-offset-4 hover:underline transition-colors">@vicgurgel</a>
+            </div>
+          </div>
         </div>
       </section>
 
